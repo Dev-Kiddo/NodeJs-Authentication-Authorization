@@ -15,18 +15,19 @@ const userSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      required: true,
-      select: false,
     },
     gender: {
       type: String,
       enum: ["M", "F"],
-      required: true,
     },
     role: {
       type: String,
       enum: ["user", "admin"],
       default: "user",
+    },
+    googleId: {
+      type: String,
+      default: "null",
     },
     isEmailVerified: {
       type: Boolean,

@@ -10,6 +10,8 @@ import {
 } from "../controllers/authController.js";
 import { auth } from "../middlewares/auth.js";
 
+import { googleCallbackHandler, oAuthHandler } from "../controllers/googleOauth.js";
+
 const router = express.Router();
 
 router.route("/register").post(registerHandler);
@@ -19,5 +21,8 @@ router.route("/refresh").post(refreshTokenHandler);
 router.route("/forgot").post(forgotPasswordHandler);
 router.route("/reset").post(resetPasswordHandler);
 router.route("/logout").get(auth, logoutHandler);
+
+router.route("/google/url").get(oAuthHandler);
+router.route("/google/callback").get(googleCallbackHandler);
 
 export default router;

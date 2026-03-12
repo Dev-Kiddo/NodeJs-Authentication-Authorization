@@ -272,7 +272,7 @@ export async function loginHandler(req: Request, res: Response, next: NextFuncti
 
     return res.status(200).json({
       success: true,
-      message: "Success: login",
+      message: "Success: Login Successfully",
       // accessToken,
       user: {
         _id: user._id,
@@ -287,7 +287,7 @@ export async function loginHandler(req: Request, res: Response, next: NextFuncti
     console.log(error);
     return res.status(500).json({
       success: false,
-      message: "Fail: login",
+      message: "Fail: Login Failed",
     });
   }
 }
