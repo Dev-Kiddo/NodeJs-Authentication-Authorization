@@ -49,7 +49,7 @@ export async function fetchUserHandler(req: Request, res: Response, next: NextFu
 
 export async function deleteUserhandler(req: Request, res: Response, next: NextFunction) {
   try {
-    const { id } = req.body;
+    const { id } = req.params;
 
     const user = await userModel.findById({ _id: id });
 
